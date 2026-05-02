@@ -1,0 +1,251 @@
+@use 'partial';
+
+/*Generel styling*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    padding: 0;
+    font-family: partial.$font;
+    background-color: partial.$bg-color;
+
+        p{
+            font-size: 16px;
+            color: partial.$primary-text-color;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            font-weight: 600;
+            color: partial.$primary-text-color;
+        }
+}
+
+/*Skip to main content code snippet fra:https://www.a11y-collective.com/blog/skip-to-main-content/ */
+
+.screen-reader-text {
+position: absolute; //Positions the link absolutely on the page, allowing it to be placed anywhere.
+left: -9999px; //Moves the link far off-screen to the left, making it invisible to sighted users.
+z-index: 999; //Sets a high z-index, ensuring that the link will be on top of other page elements if it becomes visible.
+padding: 1em;
+background-color: black;
+color: white;
+opacity: 0; //Sets the link's opacity to 0, making it fully transparent and invisible.
+}
+.screen-reader-text:focus {
+left: 50%; // When the link receives focus (e.g., when a keyboard user tabs to it), it is repositioned horizontally to the centre of the screen.
+transform: translateX(-50%); //This centres the link horizontally by moving it back to the left by 50% of its own width.
+opacity: 1; //The link's opacity is set to 1, making it fully visible.
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+header{
+    background-color: partial.$primary-color;
+    border-bottom: 4px solid partial.$footer-bund-color;
+}
+
+nav{
+    color: partial.$secondary-text-color;
+    height: 4em;
+    padding: 1em;
+    @include partial.flex($justify: space-between);
+
+        img{
+            width: 70px;
+        }
+
+        #bars{
+            display: flex;
+            border: none;
+            background-color: transparent;
+            font-size: 2.3em;
+            color: partial.$primary-text-color;
+            cursor: pointer;
+        }
+
+        ul{
+            display: none;
+            height: auto;
+            border-top: 4px solid partial.$footer-bund-color;
+            flex-direction: column;
+
+                li{
+                    display: flex;
+                }
+        }
+
+        .show{
+            display: flex;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            padding: 0;
+            background-color: partial.$primary-color;
+            width: 100%;
+            z-index: 1;
+        }
+}
+
+.banner-img{
+    background-image: url(../img/ChatGPT\ Image\ Apr\ 30\,\ 2026\ at\ 06_08_44\ PM.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 35vh;
+    width: 100vw;
+    margin-bottom: 1em;
+}
+
+.text{
+    margin: 2em;
+    text-align: center;
+        p{
+            margin-top: 0.8em;
+            margin-bottom: 2em;
+        }
+}
+
+.primary-btn{
+    @include partial.btn($text-color: #000);
+    font-weight: bold;
+}
+
+.branching{
+    background-image: url(../img/ChatGPT\ Image\ May\ 1\,\ 2026\ at\ 09_59_09\ AM.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    width: 90vw;
+    margin: 1em auto;
+    border: 2px solid partial.$primary-text-color;
+    border-radius: 8px;
+
+        h2{
+            position: absolute;
+            top: 95%;
+            font-size: 35px;
+            margin: 1em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .btn{
+            background-color: rgba(12, 137, 59, 0.4);
+            padding: 1em 3em;
+            border-radius: 8px;
+            border: 2px solid #0C893B;
+            text-decoration: none;
+            text-align: center;
+            color: partial.$primary-text-color;
+            position: absolute;
+            top: 120%;
+            left: 33%;
+            font-size: 20px;
+            font-weight: bold;
+
+                &:hover{
+                    background-color: rgba(12, 137, 57, 0.8);
+                    transition: 0.3s ease-in-out;
+                }
+        }
+}
+
+.kontaktform{
+    background-color: partial.$secondary-color;
+    border-radius: 8px;
+    padding: 0.8em;
+    width: 80%;
+    margin: 3em auto;
+
+        h2{
+            color: partial.$secondary-text-color;
+        }
+        p{
+            color: partial.$secondary-text-color;
+        }
+        
+        .section-form{
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type=text], input[type=email], input[type=tel], select, textarea{
+            border: 2px solid partial.$special-color;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin: 0.5em 0 1em 0;
+            font-family: partial.$font;
+
+                &::placeholder{
+                    color: partial.$special-color
+                }
+        }
+
+        input[type=submit]{
+            @include partial.btn($bg-color: partial.$special-color, $hover-bg: partial.$hover-bg, $text-color: partial.$primary-text-color);
+            margin: 0;
+            border: 0;
+            font-weight: bold;
+        }
+
+        .visually-hidden {
+            border: 0;
+            clip-path: inset(50%);
+            height: 1px;
+            margin: 0;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+}
+}
+
+footer:nth-of-type(1){
+    background-color: partial.$primary-color;
+}
+
+.footer-container{
+    @include partial.flex($justify: space-between);
+
+        h3{
+            color: partial.$secondary-text-color;
+            margin: 10px;
+            font-size: 24px;
+        }
+
+        p{
+            color: partial.$secondary-text-color;
+            margin: 4px 0;
+        }
+}
+
+.footer-left{
+    color: partial.$secondary-text-color;
+}
+
+.footer-right{
+    .footer-logo{
+        width: 120px;
+    }
+}
+
+footer:nth-of-type(2){
+    background-color: partial.$footer-bund-color;
+    text-align: center;
+
+        p{
+            color: partial.$secondary-text-color
+        }
+}
+
+@media screen and (min-width: 1024px){
+    
+}

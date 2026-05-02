@@ -1,0 +1,256 @@
+/*Variabler*/
+/*Mixin*/
+/*Generel styling*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  font-family: "segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2c2c2c;
+}
+body p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.5;
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-weight: 600;
+  color: #fff;
+}
+
+/*Skip to main content code snippet fra:https://www.a11y-collective.com/blog/skip-to-main-content/ */
+.screen-reader-text {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: black;
+  color: white;
+  opacity: 0;
+}
+
+.screen-reader-text:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  background-color: #008AE7;
+  border-bottom: 4px solid #AFDFFF;
+}
+
+nav {
+  color: #000;
+  height: 4em;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img {
+  width: 70px;
+}
+nav #bars {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  font-size: 2.3em;
+  color: #fff;
+  cursor: pointer;
+}
+nav ul {
+  display: none;
+  height: auto;
+  border-top: 4px solid #AFDFFF;
+  flex-direction: column;
+}
+nav ul li {
+  display: flex;
+}
+nav .show {
+  display: flex;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  padding: 0;
+  background-color: #008AE7;
+  width: 100%;
+  z-index: 1;
+}
+
+.banner-img {
+  background-image: url(../img/ChatGPT\ Image\ Apr\ 30\,\ 2026\ at\ 06_08_44\ PM.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 35vh;
+  width: 100vw;
+  margin-bottom: 1em;
+}
+
+.text {
+  margin: 2em;
+  text-align: center;
+}
+.text p {
+  margin-top: 0.8em;
+  margin-bottom: 2em;
+}
+
+.primary-btn {
+  background-color: #A259FF;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+}
+.primary-btn:hover {
+  background-color: #660066;
+  transition: 0.3s ease-in-out;
+  color: #fff;
+}
+.primary-btn {
+  font-weight: bold;
+}
+
+.branching {
+  background-image: url(../img/ChatGPT\ Image\ May\ 1\,\ 2026\ at\ 09_59_09\ AM.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  width: 90vw;
+  margin: 1em auto;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+.branching h2 {
+  position: absolute;
+  top: 95%;
+  font-size: 35px;
+  margin: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+.branching .btn {
+  background-color: rgba(12, 137, 59, 0.4);
+  padding: 1em 3em;
+  border-radius: 8px;
+  border: 2px solid #0C893B;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 120%;
+  left: 33%;
+  font-size: 20px;
+  font-weight: bold;
+}
+.branching .btn:hover {
+  background-color: rgba(12, 137, 57, 0.8);
+  transition: 0.3s ease-in-out;
+}
+
+.kontaktform {
+  background-color: #A259FF;
+  border-radius: 8px;
+  padding: 0.8em;
+  width: 80%;
+  margin: 3em auto;
+}
+.kontaktform h2 {
+  color: #000;
+}
+.kontaktform p {
+  color: #000;
+}
+.kontaktform .section-form {
+  display: flex;
+  flex-direction: column;
+}
+.kontaktform input[type=text], .kontaktform input[type=email], .kontaktform input[type=tel], .kontaktform select, .kontaktform textarea {
+  border: 2px solid #660066;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 0.5em 0 1em 0;
+  font-family: "segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.kontaktform input[type=text]::-moz-placeholder, .kontaktform input[type=email]::-moz-placeholder, .kontaktform input[type=tel]::-moz-placeholder, .kontaktform select::-moz-placeholder, .kontaktform textarea::-moz-placeholder {
+  color: #660066;
+}
+.kontaktform input[type=text]::placeholder, .kontaktform input[type=email]::placeholder, .kontaktform input[type=tel]::placeholder, .kontaktform select::placeholder, .kontaktform textarea::placeholder {
+  color: #660066;
+}
+.kontaktform input[type=submit] {
+  background-color: #660066;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+.kontaktform input[type=submit]:hover {
+  background-color: #D52FD5;
+  transition: 0.3s ease-in-out;
+  color: #fff;
+}
+.kontaktform input[type=submit] {
+  margin: 0;
+  border: 0;
+  font-weight: bold;
+}
+.kontaktform .visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+footer:nth-of-type(1) {
+  background-color: #008AE7;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-container h3 {
+  color: #000;
+  margin: 10px;
+  font-size: 24px;
+}
+.footer-container p {
+  color: #000;
+  margin: 4px 0;
+}
+
+.footer-left {
+  color: #000;
+}
+
+.footer-right .footer-logo {
+  width: 120px;
+}
+
+footer:nth-of-type(2) {
+  background-color: #AFDFFF;
+  text-align: center;
+}
+footer:nth-of-type(2) p {
+  color: #000;
+}/*# sourceMappingURL=style.css.map */

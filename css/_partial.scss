@@ -1,0 +1,32 @@
+/*Variabler*/
+$primary-color: #008AE7;
+$secondary-color: #A259FF;
+$bg-color: #2c2c2c;
+$primary-text-color: #fff;
+$secondary-text-color: #000;
+$special-color: #660066;
+$hover-bg: #D52FD5;
+$footer-bund-color: #AFDFFF;
+$font: 'segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+/*Mixin*/
+@mixin flex($justify: center, $align: center){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin btn($bg-color: $secondary-color, $btn-padding: 0.8em 1em, $hover-bg: $special-color, $hover-color: #fff, $text-color: 000){
+    background-color: $bg-color;
+    padding: $btn-padding;
+    border-radius: 8px;
+    color: $text-color;
+    text-decoration: none;
+    text-align: center;
+    
+        &:hover{
+            background-color: $hover-bg;
+            transition: 0.3s ease-in-out;
+            color: $hover-color;
+            }
+}

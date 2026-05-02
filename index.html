@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSec</title>
+    <script src="https://kit.fontawesome.com/3502b099e4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/branching.js" defer></script>
+</head>
+<body>
+    
+    <!-- Skip to main content link for screen readers -->
+    <a href="#hovedindhold" class="screen-reader-text">Skip to main content </a>
+    
+    <!--Navigation-->
+    <header>
+        <nav>
+            <a href="#"><img src="img/wifi.png" alt=""></a>
+            <!--Bars-->
+            <button
+                id="bars"
+                aria-expanded="false"
+                aria-controls="menu"
+                aria-label="åben navigation">
+                <i class="fa-solid fa-bars"></i>
+          </button>
+          <!--Navigation-->
+            <ul id="menu">
+                <li><a href="#">Forside</a></li>
+                <li><a href="#">Om os</a></li>
+                <li><a href="#">Kontakt os</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Banner billede-->
+    <section class="banner-img">
+        <!--Banner billede insat i scss-->
+    </section>
+
+    <main>
+        <!--Tekst-->
+        <section id="hovedoinhold" class="text">
+            <h1>Cybersecurity</h1>
+        <!--Skift tekst--><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi necessitatibus pariatur ut possimus porro nulla nesciunt, dignissimos recusandae officia ullam et, maxime distinctio tempore est voluptate odio officiis tempora fuga!</p>
+            <a class="primary-btn" href="#">Læs mere om Cybersecurity</a>
+        </section>
+
+        <!--Branching scenario-->
+        <section class="branching active">
+            <!--Billede insat i scss-->
+            <h2>Du vil logge på offentligt internet</h2>
+            <button class="btn">Start</button>
+        </section>
+
+        <!--Kontakt form-->
+        <section>
+            <form class="kontaktform">
+                <h2>Kontakt os</h2>
+                <p>Du kan altid kontake os hvis du har spørgsmål.</p>
+                
+                <div class="section-form">
+                    <label class="visually-hidden" for="navn">Navn</label>
+                    <input placeholder="Navn" id="navn" type="text" required />
+
+                    <label class="visually-hidden" for="mail">E-mail</label>
+                    <input placeholder="E-mail" id="mail" type="email" />
+                </div>
+
+                <div class="section-form">
+                    <label class="visually-hidden" for="telefon">Telefonnummer</label>
+                    <input placeholder="Telefon" id="telefon" type="tel" />
+
+                    <label class="visually-hidden" for="region">Vælg region</label>
+                    <select id="region" name="select">
+                        <option value="0" selected disabled>Vælg region</option>
+                        <option value="1">Region Nordjylland</option>
+                        <option value="2">Region Midtjylland</option>
+                        <option value="3">Region Syddanmark</option>
+                        <option value="4">Region Sjælland</option>
+                        <option value="5">Region Hovedstaden</option>
+                    </select>
+                </div>
+
+                <div class="section-form">
+                    <label class="visually-hidden" for="besked">Besked</label>
+                    <textarea placeholder="Besked" id="besked" rows="8"></textarea>
+                </div>
+
+                <div class="section-form">
+                    <input type="submit" name="submit" value="Send besked" />
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer-container">
+            <address class="footer-left">
+                <h3>Info</h3>
+                <p>CyberSec</p>
+                <p>Kolding Åpark 1</p>
+                <p>6000 Kolding</p>
+                <p>Tlf.: 12 34 56 78</p>
+                <p>E-mail: CyberSec@cyber.dk</p>
+                <p>CVR: 1234 5678</p>
+            </address>
+            <div class="footer-right">
+                <img class="footer-logo" src="img/wifi.png" alt="">
+            </div>
+        </div>
+    </footer>
+
+    <!--Footer bund-->
+    <footer>
+        <p class="footer-bund">CyberSec</p>
+    </footer>
+    
+</body>
+</html>
