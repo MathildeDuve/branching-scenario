@@ -1,6 +1,6 @@
 @use 'partial';
 
-/*Generel styling*/
+/*Generel styling til mobil version*/
 
 *{
     box-sizing: border-box;
@@ -41,6 +41,7 @@ transform: translateX(-50%); //This centres the link horizontally by moving it b
 opacity: 1; //The link's opacity is set to 1, making it fully visible.
 }
 
+/*Navigations elementer*/
 img{
     max-width: 100%;
     height: auto;
@@ -51,6 +52,7 @@ header{
     border-bottom: 4px solid partial.$footer-bund-color;
 }
 
+/*Navigation*/
 nav{
     color: partial.$secondary-text-color;
     height: 4em;
@@ -93,6 +95,7 @@ nav{
         }
 }
 
+/*Banner billede*/
 .banner-img{
     background-image: url(../img/ChatGPT\ Image\ Apr\ 30\,\ 2026\ at\ 06_08_44\ PM.png);
     background-repeat: no-repeat;
@@ -103,6 +106,7 @@ nav{
     margin-bottom: 1em;
 }
 
+/*Overskrift og tekst*/
 .text{
     margin: 2em;
     text-align: center;
@@ -117,6 +121,7 @@ nav{
     font-weight: bold;
 }
 
+/*Branching Scenario*/
 .branching{
     background-image: url(../img/ChatGPT\ Image\ May\ 1\,\ 2026\ at\ 09_59_09\ AM.png);
     background-repeat: no-repeat;
@@ -158,6 +163,7 @@ nav{
         }
 }
 
+/*Kontaktform*/
 .kontaktform{
     background-color: partial.$secondary-color;
     border-radius: 8px;
@@ -171,7 +177,7 @@ nav{
         p{
             color: partial.$secondary-text-color;
         }
-        
+
         .section-form{
             display: flex;
             flex-direction: column;
@@ -196,6 +202,7 @@ nav{
             font-weight: bold;
         }
 
+        /*Kode stykke af visually-hidden for kontaktformen er blevet hentet fra hjemmesiden https://www.a11y-collective.com/blog/visually-hidden/*/
         .visually-hidden {
             border: 0;
             clip-path: inset(50%);
@@ -208,6 +215,8 @@ nav{
 }
 }
 
+
+/*Footer 1 med information*/
 footer:nth-of-type(1){
     background-color: partial.$primary-color;
 }
@@ -237,6 +246,7 @@ footer:nth-of-type(1){
     }
 }
 
+/*Footer 2 med navn på virksomheden*/
 footer:nth-of-type(2){
     background-color: partial.$footer-bund-color;
     text-align: center;
@@ -246,6 +256,117 @@ footer:nth-of-type(2){
         }
 }
 
+/*Tablet styling på banner billede*/
+@media screen and (min-width: 768px){
+    .banner-img{
+        height: 55vh;
+    }
+}
+
+/*Desktop styling*/
 @media screen and (min-width: 1024px){
     
+    /*Navigation*/
+    nav{
+        #bars{
+            display: none;
+        }
+
+        ul{
+            display: flex;
+            flex-direction: row;
+            border-top: 0;
+        }
+
+        a{
+            color: partial.$secondary-text-color;
+            padding: 0.5em;
+            margin: 0.5em;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+
+                &:hover{
+                    color: partial.$special-color;
+                }
+        }
+
+        .aktiv{
+            color: partial.$special-color;
+        }
+    }
+
+    /*Banner billede*/
+    .banner-img{
+        height: 80vh;
+    }
+
+    /*Overskrift og tekst med knap*/
+    .text{
+        p{
+            margin: 2em 10%;
+            margin-bottom: 2em;
+        }
+
+        .primary-btn{
+            @include partial.btn($btn-padding: 1em 2em);
+        }
+    }
+
+    /*Branching Scenario*/
+    .branching{
+        height: 90vh;
+        width: 65vw;
+        margin-top: 3em;
+            
+            h2{
+                font-size: 50px;
+                top: 150%;
+            }
+
+            .btn{
+                top: 180%;
+                left: 43%;
+            }
+    }
+
+    /*Kontaktform*/
+    .kontaktform{
+        width: 65%;
+        margin: 4em auto;
+        padding: 1.3em;
+
+            h2{
+                font-size: 25px;
+                margin-bottom: 0;
+                margin-left: 0.5em;
+            }
+
+            p{
+                margin-left: 1em;
+            }
+
+            .section-form{
+                flex-direction: row;
+                gap: 1em;
+            }
+    }
+
+    input[type=text], input[type=email], input[type=tel], select, textarea{
+        width: 100%;
+        font-size: 15px;
+        padding: 1em;
+        box-sizing: border-box;
+        margin: 0.5em 1em 1em 1em;
+    }
+
+    input[type=submit]{
+        @include partial.btn;
+        font-size: 15px;
+        border: none;
+        width: 100%;
+        margin: 0 1em;
+        cursor: pointer;
+    }
+
 }
