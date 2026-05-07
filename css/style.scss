@@ -81,12 +81,24 @@ nav{
                 li{
                     display: flex;
                 }
+                a{
+                    text-decoration: none;
+                    color: partial.$secondary-text-color;
+                    line-height: 1.5;
+                    padding: 0.5em;
+                    font-size: 20px;
+                    font-weight: bold;
+
+                        &:hover{
+                            color: partial.$special-color;
+                        }
+                }
         }
 
         .show{
             display: flex;
             position: absolute;
-            top: 80px;
+            top: 65px;
             left: 0;
             padding: 0;
             background-color: partial.$primary-color;
