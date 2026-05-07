@@ -129,50 +129,122 @@ nav .show {
 }
 
 /*Branching Scenario*/
-.stage {
-  background-image: url(../img/ChatGPT\ Image\ May\ 1\,\ 2026\ at\ 09_59_09\ AM.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 70vh;
-  width: 90vw;
-  margin: 1em auto;
-  border: 2px solid #fff;
-  border-radius: 8px;
-}
-.stage h2 {
-  position: absolute;
-  top: 95%;
-  font-size: 35px;
-  margin: 1em;
-  text-align: center;
-  font-weight: bold;
-}
-.stage .btn {
-  background-color: rgba(12, 137, 59, 0.4);
-  padding: 1em 3em;
-  border-radius: 8px;
-  border: 2px solid #0C893B;
-  text-decoration: none;
-  text-align: center;
-  color: #fff;
-  position: absolute;
-  top: 120%;
-  left: 33%;
-  font-size: 20px;
-  font-weight: bold;
-}
-.stage .btn:hover {
-  background-color: rgba(12, 137, 57, 0.8);
-  transition: 0.3s ease-in-out;
+.scenario-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
 }
 
+.stage {
+  width: 100%;
+  min-height: 650px;
+  padding: 1.5rem;
+  border-radius: 25px;
+  border: 2px solid white;
+  background: url("../img/ChatGPT Image May 1, 2026 at 09_59_09 AM.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeIn 0.4s ease;
+}
+.stage h2 {
+  color: white;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 0;
+  text-align: center;
+}
+.stage p {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 2px solid;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.left span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.status {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.btn.danger {
+  border-color: #ff3b3b;
+  background: rgba(255, 0, 0, 0.18);
+}
+.btn.danger:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.btn.safe {
+  border-color: #0C893B;
+  background: rgba(12, 137, 59, 0.18);
+}
+.btn.safe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(12, 137, 59, 0.5);
+}
+
+.btn.neutral {
+  border-color: #2196f3;
+  background: rgba(33, 150, 243, 0.18);
+}
+.btn.neutral:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /*Kontaktform*/
 .kontaktform {
   background-color: #A259FF;
   border-radius: 8px;
   padding: 0.8em;
-  width: 80%;
+  width: 100%;
   margin: 3em auto;
 }
 .kontaktform h2 {
@@ -272,6 +344,29 @@ footer:nth-of-type(2) p {
   .banner-img {
     height: 55vh;
   }
+  .stage {
+    max-width: 700px;
+    padding: 2rem;
+  }
+  .stage h2 {
+    font-size: 4rem;
+  }
+  .stage p {
+    font-size: 1.7rem;
+  }
+  .btn {
+    padding: 1.5rem 2rem;
+  }
+  .icon {
+    width: 55px;
+    height: 55px;
+  }
+  .left span {
+    font-size: 2rem;
+  }
+  .status {
+    font-size: 1.6rem;
+  }
 }
 /*Desktop styling*/
 @media screen and (min-width: 1024px) {
@@ -322,99 +417,14 @@ footer:nth-of-type(2) p {
   }
   /*Branching Scenario*/
   .stage {
-    width: 65vw;
-    max-width: 700px;
-    height: 80vh;
-    margin: 3em auto;
-    padding: 2em;
-    border-radius: 20px;
-    overflow: hidden;
-    background-image: url("../img/ChatGPT Image May 1, 2026 at 09_59_09 AM.png");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-    color: white;
+    max-width: 850px;
+    min-height: 750px;
   }
   .stage h2 {
-    font-size: 3rem;
-    margin-bottom: 0.5em;
+    font-size: 5rem;
   }
   .stage p {
-    font-size: 1.2rem;
-    margin-bottom: 2em;
-  }
-  .stage::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-  }
-  .stage * {
-    position: relative;
-    z-index: 1;
-  }
-  .btn {
-    width: 100%;
-    padding: 18px 20px;
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.08);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  /*venstre side tekst i knap*/
-  .left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  /*ikon (billede) i knap*/
-  .icon {
-    width: 30px;
-    height: 30px;
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
-  /*højre tekst i knap*/
-  .status {
-    opacity: 0.8;
-    font-size: 0.9em;
-  }
-  .btn:hover {
-    transform: scale(1.03);
-    border-color: white;
-  }
-  /*usikkert røde knap*/
-  .danger {
-    background: rgba(255, 0, 0, 0.2);
-    border-color: rgba(255, 0, 0, 0.6);
-  }
-  .danger:hover {
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-  }
-  /*sikkert grøn knap*/
-  .safe {
-    background: rgba(0, 255, 100, 0.2);
-    border-color: rgba(0, 255, 100, 0.6);
-  }
-  .safe:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 100, 0.6);
-  }
-  /*neutral blå knap*/
-  .neutral {
-    background: rgba(0, 150, 255, 0.2);
-    border-color: rgba(0, 150, 255, 0.6);
-  }
-  .neutral:hover {
-    box-shadow: 0 0 20px rgba(0, 150, 255, 0.6);
+    font-size: 2rem;
   }
   /*Kontaktform*/
   .kontaktform {

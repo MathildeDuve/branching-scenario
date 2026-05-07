@@ -10,7 +10,7 @@ const navLinks = nav.querySelectorAll("li > a");
 //Branching scenario - Henter referencer til relevante elementer i DOM'en
 const btns = document.querySelectorAll(".stage .btn");
 const stage = document.querySelectorAll(".stage");
-const main = document.querySelector("main");
+const main = document.querySelector(".section-wrapper");
 
 //Funktioner
 // Funktion til at fange tastatur-fokus og styre navigation med Tab, Shift+Tab og Escape
@@ -91,7 +91,7 @@ const endGame = (score) => {
 const buildStage = (h2Text, pText, btnsText,) => {
     console.log(document.querySelectorAll(".stage").length);
     main.innerHTML = "";
-    const section = document.createElement("section");
+    const section = document.createElement("div");
         section.classList.add("stage");
     const h2 = document.createElement("h2");
         h2.textContent = h2Text;
@@ -191,7 +191,7 @@ const nextStage = (e) => {
             ];
         break;
         case "Panik!":
-            h2Text = "⚠️ Hacker opsnapper dine data!";
+            h2Text = "⚠️ Hacker opfange dine data!";
             btnsText = [
                 {name:"Fortsæt uden", type:"danger"},
                 {name:"Brug en VPN", type:"safe"}
